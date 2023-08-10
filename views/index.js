@@ -15,7 +15,7 @@ app.get("/", (req,res)=>{
 
     let day = ""
     let advice = ""
-    function check(){
+    
         if (day_select>=1 || day_select<=6){
             day = "weekday"
             advice = "Work hard"
@@ -25,10 +25,15 @@ app.get("/", (req,res)=>{
             day = "weekend"
             advice = "Party"
         }
-    }
     
-    check()
+    
+    res.render("index.ejs", {
+        d1 : day,
+        a1 : advice
+    })
 
+
+    
 })
 
 
